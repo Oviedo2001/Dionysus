@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+
+#activar rewrite
+
+rewriteEngine on
+ErrorDocument 404 http://localhost/Dionysus/error/
+
+rewriteCond %{SCRIPT_FILENAME} !-d
+rewriteCond %{SCRIPT_FILENAME} !-f
+
+rewriteRule ^(.*)/(.*) index.php?controller=$1&action=$2
+
+</IfModule>

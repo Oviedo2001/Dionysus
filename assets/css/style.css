@@ -1,0 +1,595 @@
+/*GENERALES*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cardo', serif;
+    position: relative;
+    padding-bottom: 218.58px; /*esto es de acuerdo a la altura del footer*/
+    min-height: 100vh;
+    display:flex;
+    flex-direction: column;
+    background-color: #f1f1f1
+}
+
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/*##########################################################################*/
+
+/*Inicio header*/
+.navbar-custom {
+    background-color: black;
+}
+
+.nav-link {
+    color:white;
+}
+
+.nav-link:hover {
+    color:#70CAEE;
+}
+
+.card img {
+    width: -webkit-fill-available;
+    height: 200px;
+}
+
+/*#############################################################*/
+/*Sub-inicio Header = nav*/
+.titlehd {
+    font-weight: 900;
+    /*font-style: italic;*/
+    font-size: 1.5rem;
+    color: #70CAEE;
+    line-height: 0.8;
+    margin-right: auto;
+}
+/*Sub-final Header = nav*/
+
+/*#############################################################*/
+
+/*Sub-inicio Header = contenedor de imagen y titulo*/
+.textima {
+    position: relative;
+    background: #000000;
+    color: #ffffff;
+    text-align: center;
+    overflow: hidden;
+    padding: 0 5rem 0 5rem;
+}
+
+.wave {
+    width: 100%;
+    background: #f1f1f1;
+}
+
+.waveimg {
+    float: left;
+    width: 20%;
+}
+
+.tipafo {
+    float: right;
+    width: 80%;
+    /*height: 288px;*/
+    padding: 6rem 0 0 0;
+}
+
+.tipafo h1 {
+    font-size: 5rem;
+    margin: -1rem 1.10rem 1.5rem 1rem;
+    text-transform: capitalize;
+    font-weight: 900;
+    font-style: italic;
+    color: #70CAEE;
+    text-align: center;
+    line-height: 0.7;
+}
+
+.tipafo p {
+    font-size: 2rem;
+    margin: 0 1rem 0 1rem;
+}
+/*Sub-final Header = contenedor de imagen y titulo*/
+
+/*#############################################################*/
+
+/*Sub-inicio Header = contenedor de olas*/
+
+.waves1 {
+    position:relative;
+    width: 100%;
+    height:15vh;
+    margin-bottom:-7px; /*Fix for safari gap*/
+    min-height:100px;
+    max-height:150px;
+    background: black;
+}
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px,0,0);
+    }
+    100% {
+        transform: translate3d(85px,0,0);
+    }
+}
+
+/*Sub-final Header = contenedor de olas*/
+
+/*#############################################################*/
+
+/*Finalizo header*/
+botton, .botton {
+    display: block;
+    border-radius: 2px;
+    width: auto;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    background: #2979CD;
+    border: 1px solid #116D8E;
+    cursor: pointer;
+}
+.botton-small {
+    width: 26.3%;
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.botton-gestion {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.boton-red {
+    background: red;
+}
+.botton-small:hover {
+    color: black;
+}
+
+.thumb {
+    width: 138px;
+}
+
+.form {
+    border: 1px solid red;
+}
+
+.motDir {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 32px;
+    grid-auto-flow: dense;
+}
+
+.motDirItem {
+    background-color: #ffffffcc;
+    border-radius: 2%;
+    padding: 2%;
+    text-align: center;
+}
+
+.motDirItem img {
+    width: 100%;
+    height: 200px;
+    border-radius: 2%;
+}
+
+.motDirItem:hover a {
+    color: #70CAEE;
+}
+.motDirItem a {
+    color: #70CAEE;
+    font-size: 1em;
+}
+.motDirItem h1 {
+    margin-top: 2%;
+}
+
+/*Inicio Footer*/
+
+footer{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background: #000000;
+    padding: 20px 0 10px 0;
+    margin: auto;
+    overflow: hidden;
+}
+
+.contenedor-footer{
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    margin: auto;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ffffff;
+}
+
+.content-foo{
+    text-align: center;
+}
+
+.content-foo h4{
+    color: #ffffff;
+    border-bottom: 3px solid #70CAEE;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.content-foo p{
+    color: #ffffff;
+}
+
+.titulo-final{
+    text-align: center;
+    font-size: 17px;
+    margin: 20px 0 0 0;
+    color: #ffffff;
+}
+.titulo-final a:hover {
+    color:#70CAEE;
+}
+
+/*Finalizo Footer*/
+
+.content {
+    padding: 10px;
+}
+.content h1 {
+    margin: 0 0 2%;
+    color: #000000;
+    text-align: center;
+}
+
+.barra-buscar {
+    width: 105%;
+    max-width: 1000px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+}
+.barra-buscar input {
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 0 10px;
+    font-size: 20px;
+    color: #1b1b1b;
+
+}
+::placeholder {
+    color: #1b1b1bbb;
+}
+.barra-buscar button img {
+    width: 25px;
+}
+
+.barra-buscar button {
+    border: 0;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background: none;
+    cursor: pointer;
+}
+
+/*moteles*/
+
+.mot {
+
+    margin: 0 auto;
+
+    padding: 10px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+.mot-item {
+    position: relative;
+    padding: 20px;
+    text-align: center;
+}
+.mot-item img {
+    width: 350px;
+    border-radius: 20px;
+    height: 250px;
+    filter: brightness(80%);
+    overflow: hidden;
+    transition: 0.5s all ease-in-out;
+}
+.mot-item a{
+    font-size: 1em;
+    font-weight: bold;
+}
+.mot-item:hover img {
+    transform: scale(1.1);
+}
+.first-txt {
+    position: absolute;
+    top: 83%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: normal;
+}
+
+
+.grid-container {
+    display: grid;
+    row-gap: 2%;
+    column-gap: 0%;
+    margin-left: 16%;
+    margin-right: 15%;
+    grid-template-columns: auto auto;
+    padding: 10px;
+}
+.grid-item {
+    position: relative;
+    padding: 20px;
+    text-align: center;
+}
+.grid-item img {
+    width: 350px;
+    border-radius: 20px;
+    height: 230px;
+    filter: brightness(80%);
+    overflow: hidden;
+    transition: 0.5s all ease-in-out;
+}
+.grid-item:hover img {
+    transform: scale(1.1);
+}
+.second-txt {
+    position: absolute;
+    top: 83%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: normal;
+}
+
+label,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+select, textarea {
+    display: block;
+    width: 80%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+/************************************************************************************************/
+/******************                   Pagina Del Motel                      *********************/
+/************************************************************************************************/
+.ftitle {
+    text-transform: capitalize;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 3rem;
+    color: #70CAEE;
+    text-align: center;
+    line-height: 1;
+}
+
+.fcontenido {
+    width: fit-content;
+    background: #fff;
+    border-radius: 17px;
+    padding: 2%;
+    margin: 0 auto;
+}
+
+@media (max-width: 500px) and (orientation: portrait) {
+    .fcontenido {
+        width: inherit;
+    }
+}
+
+@media (min-width: 1920px) {
+    .fcontenido {
+        width: fit-content;
+        margin: 0 auto;
+    }
+    #habimage img {
+        height: 170px;
+    }
+}
+
+#image img {
+    width: -webkit-fill-available;
+    margin: 1px 1px 1px 1px;
+    height: 20rem;
+    border-radius: 17px;
+}
+
+#habimage img {
+    height: 120px;
+}
+/*Finaliza pagina motel*/
+
+/************************************************************************************************/
+/************************************************************************************************/
+
+/************************************************************************************************/
+/************************************************************************************************/
+.login {
+    width: 400px;
+    background-color: #ffffff;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    margin: 10px auto;
+}
+.login h1 {
+    text-align: center;
+    color: #000000;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+
+.login a {
+    text-align: center;
+    color: #000000;
+    font-size: 17px;
+    font-weight: bold;
+}
+.login a:hover {
+    color: #3fc3ee;
+}
+
+.login form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
+.login form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    color: #ffffff;
+}
+.login form input[type="password"], .login form input[type="text"] {
+    width: 310px;
+    height: 50px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+.login form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: black;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+}
+.login form input[type="submit"]:hover {
+    background-color: #3fc3ee;
+    color: #000000;
+    transition: background-color 0.2s;
+}
+
+.register {
+    width: 400px;
+    background-color: #ffffff;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    margin: 10px auto;
+}
+.register h1 {
+    text-align: center;
+    color: #000000;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+
+.register a {
+    text-align: center;
+    color: #000000;
+    font-size: 17px;
+    font-weight: bold;
+}
+.register a:hover {
+    color: #3fc3ee;
+}
+.register form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
+.register form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    color: #ffffff;
+}
+.register form input[type="password"], .register form input[type="text"], .register form input[type="email"] {
+    width: 310px;
+    height: 50px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+.register form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: black;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+}
+.register form input[type="submit"]:hover {
+    background-color: #3fc3ee;
+    color: #000000;
+    transition: background-color 0.2s;
+}
+
+/************************************************************************************************/
+/************************************************************************************************/
