@@ -2,22 +2,19 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="<?= base_url ?>assets/css/all.css">
         <link rel="stylesheet" href="<?= base_url ?>assets/css/all.min.css">
         <link rel="stylesheet" href="<?= base_url ?>assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?= base_url ?>assets/css/style.css">
-        <link rel="stylesheet" href="<?= base_url ?>assets/css/sweetalert2.css"/>
-        <script src="<?= base_url ?>assets/js/all.js"></script>
+        <link rel="stylesheet" href="<?= base_url ?>assets/css/sweetalert2.css"/> 
         <script src="<?= base_url ?>assets/js/all.min.js"></script>
         <script src="<?= base_url ?>assets/js/bootstrap.bundle.min.js"></script>
         <script src="<?= base_url ?>assets/js/jquery-3.2.1.min.js"></script>
-        <script src="<?= base_url ?>assets/js/owl.carousel.min.js"></script>
         <script src="<?= base_url ?>assets/js/sweetalert2.all.min.js"></script>
         <link rel="icon" href="<?= base_url ?>assets/img/Dionysus - Logo.ico"/>
         <title>Dionysus</title>
     </head>
     <body>
-                <header>
+        <header>
 
             <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
                 <div class="container-fluid">

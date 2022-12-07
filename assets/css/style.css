@@ -450,7 +450,7 @@ select, textarea {
 }
 
 #image img {
-    width: -webkit-fill-available;
+    /* width: -webkit-fill-available; */
     margin: 1px 1px 1px 1px;
     height: 20rem;
     border-radius: 17px;
