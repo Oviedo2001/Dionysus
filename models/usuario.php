@@ -103,4 +103,8 @@ class usuario{
         
         return $result;
     }
+
+    public function reset() {
+        
+    }
 }

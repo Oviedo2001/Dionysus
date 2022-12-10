@@ -48,24 +48,16 @@
 <h1>Nuevos Moteles</h1>
 
 <div class="mot">
-    <div class="mot-item">
-        <a href="#">
-            <img src="assets/img/fetiche/feti.jpg" />
-            <h2 class="first-txt">Fetiche</h2>                     
-        </a>
-    </div>
-
-    <div class="mot-item">
-        <a href="#">
-            <img src="assets/img/venus/ve.png" />
-            <h2 class="first-txt">Venus</h2>  
-        </a>
-    </div>
-
-    <div class="mot-item">
-        <a href="#">
-            <img src="assets/img/fontana/fonta.jpg" />
-            <h2 class="first-txt">Fontana</h2> 
-        </a>
-    </div>
+    <?php while ($mote = $moteles->fetch_object()) : ?>
+        <div class="mot-item">
+            <a href="<?= base_url ?>motel/ver&id=<?= $mote->id ?>">
+                <?php if ($mote->image != null): ?>
+                    <center><img src="<?= base_url ?>uploads/images/motel/<?= $mote->image ?>" ></center>
+                <?php else: ?>
+                    <center><img src="<?= base_url ?>assets/img/dummy.png"></center>
+                <?php endif; ?>
+                <h2 class="first-txt"><?= $mote->nombre ?></h2>                     
+            </a>
+        </div>
+    <?php endwhile; ?>
 </div>

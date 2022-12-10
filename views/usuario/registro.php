@@ -21,31 +21,6 @@
     <?php Utils::deleteSession('register'); ?>
 
     <form action="<?= base_url ?>usuario/save" method="POST">
-        <!--<table>
-
-            <tr>
-                <td><label for="nombre">Nombre: </label></td>
-                <td><input type="text" name="nombre" required /></td>
-            </tr>
-
-            <tr>
-                <td><label for="apellidos">Apellidos: </label></td>
-                <td><input type="text" name="apellidos" required /></td>
-            </tr>
-
-            <tr>
-                <td><label for="email">Email: </label></td>
-                <td><input type="email" name="email" required /></td>
-            </tr>
-
-            <tr>
-                <td><label for="password">Contraseña: </label></td>
-                <td><input type="password" name="password" required /></td>
-            </tr>
-
-        </table>
-
-        <input type="submit" value="Registrarse" />--->
 
         <label for="nombre">
             <i class="fas fa-user"></i>
@@ -67,7 +42,7 @@
         </label>
         <input type="password" name="password" placeholder="Contraseña" required>
 
-        <a href="<?= base_url ?>usuario/ingresar">Ingresar</a>
+        <p style="margin: 10px 0 0 0;">¿Ya tienes una cuenta?<a style="margin-left: 8px;" href="<?= base_url ?>usuario/ingresar">Ingresa</a> </p>
 
         <input type="submit" value="Registrarse">
 

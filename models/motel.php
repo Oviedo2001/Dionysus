@@ -94,6 +94,11 @@ class motel {
         return $moteles;
     }
     
+    public function getThree() {
+        $moteles = $this->db->query("SELECT * FROM motel ORDER BY id DESC LIMIT 3 ");
+        return $moteles;
+    }
+        
     public function getOne() {
         $motel = $this->db->query("SELECT * FROM motel WHERE id = {$this->getId()}");
         return $motel->fetch_object();
@@ -141,6 +146,10 @@ class motel {
             $result = true;
         }
         return $result;
+    }
+
+public function busqueda(){
+            
     }
 
 }

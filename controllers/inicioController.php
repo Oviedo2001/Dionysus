@@ -1,8 +1,13 @@
 <?php
 
+require_once 'models/motel.php';
+
 class inicioController {
 
     public function index() {
+        $motel = new motel();
+        $moteles = $motel->getThree();
+
         require_once 'views/layout/header.php';
         require_once 'views/inicio/inicio.php';
     }
@@ -12,4 +17,9 @@ class inicioController {
         require_once 'views/inicio/reportes.php';
     }
 
+    public function search() {
+
+        require_once 'views/layout/header2.php';
+        require_once 'views/inicio/resultsearch.php';
+    }
 }

@@ -18,6 +18,11 @@ class usuarioController {
         require_once 'views/usuario/ingresar.php';
     }
 
+    public function resetpass() {
+        require_once 'views/layout/header2.php';
+        require_once 'views/usuario/reset.php';
+    }
+
     public function save() {
         if (isset($_POST)) {
             $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : false;

@@ -63,7 +63,7 @@
                         </ul>
                         <form class="d-flex">
                             <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search">
-                            <button class="btn btn-outline-info" type="submit">Search</button>
+                            <button class="btn btn-outline-info" type="submit" formaction="<?= base_url ?>inicio/search" name="submit-search">Search</button>
                         </form>
                     </div>
                 </div>

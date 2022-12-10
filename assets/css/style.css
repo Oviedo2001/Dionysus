@@ -16,8 +16,6 @@ body {
     background-color: #f1f1f1
 }
 
-
-
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
@@ -275,6 +273,11 @@ footer{
     margin: 20px 0 0 0;
     color: #ffffff;
 }
+.titulo-final a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
 .titulo-final a:hover {
     color:#70CAEE;
 }
@@ -365,7 +368,6 @@ footer{
     font-weight: normal;
 }
 
-
 .grid-container {
     display: grid;
     row-gap: 2%;
@@ -437,6 +439,30 @@ select, textarea {
     .fcontenido {
         width: inherit;
     }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 32px;
+        grid-auto-flow: dense;
+        margin: 0 auto;
+    }
+
+    .textima {
+        padding: 0;
+        margin: 0 auto;
+    }
+    
+    .waveimg {
+        float: none;
+        width: unset;
+        padding: 0 0 20px;
+    }
+    .tipafo {
+        width: unset;
+        height: 0%;
+        padding: 0%;
+    }
 }
 
 @media (min-width: 1920px) {
@@ -471,6 +497,7 @@ select, textarea {
     background-color: #ffffff;
     box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
     margin: 10px auto;
+    border-radius: 17px;
 }
 .login h1 {
     text-align: center;
@@ -482,12 +509,9 @@ select, textarea {
 
 .login a {
     text-align: center;
-    color: #000000;
-    font-size: 17px;
-    font-weight: bold;
-}
-.login a:hover {
     color: #3fc3ee;
+    font-size: 17px;
+    font-weight: 600;
 }
 
 .login form {
@@ -504,6 +528,7 @@ select, textarea {
     height: 50px;
     background-color: black;
     color: #ffffff;
+    border-radius: 17px 0 0 17px;
 }
 .login form input[type="password"], .login form input[type="text"] {
     width: 310px;
@@ -511,6 +536,7 @@ select, textarea {
     border: 1px solid #dee0e4;
     margin-bottom: 20px;
     padding: 0 15px;
+    border-radius: 0 17px 17px 0;
 }
 .login form input[type="submit"] {
     width: 100%;
@@ -522,6 +548,7 @@ select, textarea {
     font-weight: bold;
     color: #ffffff;
     transition: background-color 0.2s;
+    border-radius: 0 0 17px 17px;
 }
 .login form input[type="submit"]:hover {
     background-color: #3fc3ee;
@@ -534,6 +561,7 @@ select, textarea {
     background-color: #ffffff;
     box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
     margin: 10px auto;
+    border-radius: 17px;
 }
 .register h1 {
     text-align: center;
@@ -545,13 +573,11 @@ select, textarea {
 
 .register a {
     text-align: center;
-    color: #000000;
-    font-size: 17px;
-    font-weight: bold;
-}
-.register a:hover {
     color: #3fc3ee;
+    font-size: 17px;
+    font-weight: 600;
 }
+
 .register form {
     display: flex;
     flex-wrap: wrap;
@@ -566,6 +592,7 @@ select, textarea {
     height: 50px;
     background-color: black;
     color: #ffffff;
+    border-radius: 17px 0 0 17px;
 }
 .register form input[type="password"], .register form input[type="text"], .register form input[type="email"] {
     width: 310px;
@@ -573,6 +600,7 @@ select, textarea {
     border: 1px solid #dee0e4;
     margin-bottom: 20px;
     padding: 0 15px;
+    border-radius: 0 17px 17px 0;
 }
 .register form input[type="submit"] {
     width: 100%;
@@ -584,6 +612,7 @@ select, textarea {
     font-weight: bold;
     color: #ffffff;
     transition: background-color 0.2s;
+    border-radius: 0 0 17px 17px;
 }
 .register form input[type="submit"]:hover {
     background-color: #3fc3ee;
