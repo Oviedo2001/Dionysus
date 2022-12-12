@@ -16,7 +16,7 @@
 <?php elseif (isset($_SESSION['motel']) && $_SESSION['motel'] != 'complete'): ?>
     <?php echo "<script> swal.fire({
         title: '¡Algo salio mal!',
-        text: 'Registro fallido, introduce bien los datos',
+        text: 'Registro fallido, introduce bien los datos o estos datos ya se encuentran registrados',
         icon: 'error',
         });</script>";
     ?>

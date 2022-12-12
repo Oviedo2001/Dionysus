@@ -2,18 +2,18 @@
     <h1>Editar motel <?= $mot->nombre ?></h1>
     <?php $url_action = base_url . "motel/save&id=" . $mot->id; ?>
 
-<?php else: ?>
+<?php else : ?>
     <h1>Agregar Motel</h1>
     <?php $url_action = base_url . "motel/save"; ?>
 <?php endif; ?>
 
-<form action="<?= $url_action ?>" method="POST" enctype="multipart/form-data">
+<form class="needs-validation" action="<?= $url_action ?>" method="POST" enctype="multipart/form-data" novalidate>
     <div class="container bg-light">
         <div class="mb-3 col-xs-3">
             <label for="rpta" class="form-label">Representante Legal: </label>
             <?php $rptas = Utils::showRepresentantes(); ?>
             <select name="rpta" class="form-select">
-                <?php while ($rpt = $rptas->fetch_object()): ?>
+                <?php while ($rpt = $rptas->fetch_object()) : ?>
                     <option value="<?= $rpt->id ?>" <?= isset($mot) && is_object($mot) && $rpt->id == $mot->documento_rpta ? 'selected' : ''; ?>>
                         <?= $rpt->nombre_rpta ?>
                     </option>
@@ -28,7 +28,10 @@
 
         <div class="mb-3 col-xs-3">
             <label for="nombre" class="form-label">Nombre: </label>
-            <input type="text" class="form-control" name="nombre" value="<?= isset($mot) && is_object($mot) ? $mot->nombre : ''; ?>" required />
+            <input type="text" class="form-control" name="nombre" value="<?= isset($mot) && is_object($mot) ? $mot->nombre : ''; ?>" />
+            <div class="valid-feedback">
+                Looks good!
+            </div>
         </div>
 
         <div class="mb-3 col-xs-3">
@@ -55,18 +58,38 @@
 
         <div class="mb-3 col-xs-3">
 
-            <label for="imagen" class="form-label">Imagen: </label>      
-            <?php if (isset($mot) && is_object($mot) && !empty($mot->image)): ?>
+            <label for="imagen" class="form-label">Imagen: </label>
+            <?php if (isset($mot) && is_object($mot) && !empty($mot->image)) : ?>
 
-                <img src="<?= base_url ?>uploads/images/motel/<?= $mot->image ?>" class="thumb"/>
+                <img src="<?= base_url ?>uploads/images/motel/<?= $mot->image ?>" class="thumb" />
 
             <?php endif; ?>
 
-            <input class="form-control my-2" type="file" name="imagen"/>
+            <input class="form-control my-2" type="file" name="imagen" />
 
         </div>
 
         <button type="submit" class="btn btn-primary">Guardar</button>
     </div>
-</form>
 
+    <script>
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </Script>
+</form>

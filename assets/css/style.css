@@ -9,10 +9,8 @@
 body {
     font-family: 'Cardo', serif;
     position: relative;
-    padding-bottom: 218.58px; /*esto es de acuerdo a la altura del footer*/
+    padding-bottom: 56px; /*esto es de acuerdo a la altura del footer*/
     min-height: 100vh;
-    display:flex;
-    flex-direction: column;
     background-color: #f1f1f1
 }
 
@@ -402,18 +400,6 @@ footer{
     font-weight: normal;
 }
 
-label,
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="tel"],
-select, textarea {
-    display: block;
-    width: 80%;
-    margin-top: 2px;
-    margin-bottom: 2px;
-}
-
 /************************************************************************************************/
 /******************                   Pagina Del Motel                      *********************/
 /************************************************************************************************/
@@ -435,7 +421,10 @@ select, textarea {
     margin: 0 auto;
 }
 
-@media (max-width: 500px) and (orientation: portrait) {
+@media (max-width: 480px) and (orientation: portrait) {
+    body {
+        padding-bottom: 77px; /*esto es de acuerdo a la altura del footer*/
+    }
     .fcontenido {
         width: inherit;
     }
@@ -463,6 +452,47 @@ select, textarea {
         height: 0%;
         padding: 0%;
     }
+    .mot-item img, .grid-item img {
+        width: -webkit-fill-available;
+    }
+
+    .tipafo h1 {
+        font-size: 4rem;
+        margin: -1rem 1.10rem 1.5rem 1rem;
+        text-transform: capitalize;
+        font-weight: 900;
+        font-style: italic;
+        color: #70CAEE;
+        text-align: center;
+        line-height: 0.7;
+    }
+
+}
+
+@media (max-width: 950px) and (orientation: landscape) {
+    .textima {
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+    }
+    
+    .waveimg {
+        float: none;
+        width: unset;
+        
+    }
+    .tipafo {
+        width: unset;
+        height: 0%;
+        padding: 0%;
+    }
+    .grid-container, .mot {
+        margin: 0 auto;
+        padding: 10px;;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(307px, 1fr));
+        gap: 1rem;
+    }
+
 }
 
 @media (min-width: 1920px) {
@@ -476,9 +506,9 @@ select, textarea {
 }
 
 #image img {
-    /* width: -webkit-fill-available; */
+    width: -webkit-fill-available;
     margin: 1px 1px 1px 1px;
-    height: 20rem;
+    /* height: 20rem; */
     border-radius: 17px;
 }
 
@@ -486,139 +516,6 @@ select, textarea {
     height: 120px;
 }
 /*Finaliza pagina motel*/
-
-/************************************************************************************************/
-/************************************************************************************************/
-
-/************************************************************************************************/
-/************************************************************************************************/
-.login {
-    width: 400px;
-    background-color: #ffffff;
-    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
-    margin: 10px auto;
-    border-radius: 17px;
-}
-.login h1 {
-    text-align: center;
-    color: #000000;
-    font-size: 24px;
-    padding: 20px 0 20px 0;
-    border-bottom: 1px solid #dee0e4;
-}
-
-.login a {
-    text-align: center;
-    color: #3fc3ee;
-    font-size: 17px;
-    font-weight: 600;
-}
-
-.login form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-top: 20px;
-}
-.login form label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    background-color: black;
-    color: #ffffff;
-    border-radius: 17px 0 0 17px;
-}
-.login form input[type="password"], .login form input[type="text"] {
-    width: 310px;
-    height: 50px;
-    border: 1px solid #dee0e4;
-    margin-bottom: 20px;
-    padding: 0 15px;
-    border-radius: 0 17px 17px 0;
-}
-.login form input[type="submit"] {
-    width: 100%;
-    padding: 15px;
-    margin-top: 20px;
-    background-color: black;
-    border: 0;
-    cursor: pointer;
-    font-weight: bold;
-    color: #ffffff;
-    transition: background-color 0.2s;
-    border-radius: 0 0 17px 17px;
-}
-.login form input[type="submit"]:hover {
-    background-color: #3fc3ee;
-    color: #000000;
-    transition: background-color 0.2s;
-}
-
-.register {
-    width: 400px;
-    background-color: #ffffff;
-    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
-    margin: 10px auto;
-    border-radius: 17px;
-}
-.register h1 {
-    text-align: center;
-    color: #000000;
-    font-size: 24px;
-    padding: 20px 0 20px 0;
-    border-bottom: 1px solid #dee0e4;
-}
-
-.register a {
-    text-align: center;
-    color: #3fc3ee;
-    font-size: 17px;
-    font-weight: 600;
-}
-
-.register form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-top: 20px;
-}
-.register form label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    background-color: black;
-    color: #ffffff;
-    border-radius: 17px 0 0 17px;
-}
-.register form input[type="password"], .register form input[type="text"], .register form input[type="email"] {
-    width: 310px;
-    height: 50px;
-    border: 1px solid #dee0e4;
-    margin-bottom: 20px;
-    padding: 0 15px;
-    border-radius: 0 17px 17px 0;
-}
-.register form input[type="submit"] {
-    width: 100%;
-    padding: 15px;
-    margin-top: 20px;
-    background-color: black;
-    border: 0;
-    cursor: pointer;
-    font-weight: bold;
-    color: #ffffff;
-    transition: background-color 0.2s;
-    border-radius: 0 0 17px 17px;
-}
-.register form input[type="submit"]:hover {
-    background-color: #3fc3ee;
-    color: #000000;
-    transition: background-color 0.2s;
-}
 
 /************************************************************************************************/
 /************************************************************************************************/

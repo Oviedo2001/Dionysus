@@ -17,6 +17,11 @@ class inicioController {
         require_once 'views/inicio/reportes.php';
     }
 
+    public function mapsite() {
+        require_once 'views/layout/header2.php';
+        require_once 'views/inicio/mapsite.php';
+    }
+
     public function search() {
 
         require_once 'views/layout/header2.php';
