@@ -8,7 +8,7 @@
                 <span class="text-white mx-1">&middot;</span>
                 <a class="link-light small" href="#!">Contacto</a>
                 <span class="text-white mx-1">&middot;</span>
-                <a class="link-light small" href="#!">Manual del usuario</a>
+                <a class="link-light small" href="Dionysus.pdf">Manual del usuario</a>
               </div>
               <div class="col-auto">
                 <div class="small m-0 text-white">Copyright &copy; Dionysus 2022</div>

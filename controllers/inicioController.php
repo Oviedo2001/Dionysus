@@ -1,6 +1,7 @@
 <?php
 
 require_once 'models/motel.php';
+require_once 'models/habitacion.php';
 
 class inicioController
 {
@@ -9,6 +10,9 @@ class inicioController
   {
     $motel = new motel();
     $moteles = $motel->getThree();
+
+    $habitacion = new habitacion();
+    $habitaciones = $habitacion->getTwo();
 
     require_once 'views/layout/header.php';
     require_once 'views/inicio/inicio.php';
