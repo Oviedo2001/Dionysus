@@ -39,7 +39,7 @@
         <?php else : ?>
           <center><img src="<?= base_url ?>assets/img/dummy.png"></center>
         <?php endif; ?>
-        <h2 class="first-txt"><?= $mote->nombre ?></h2>
+        <h2 class="second-txt"><?= $mote->nombre ?></h2>
       </a>
     </div>
   <?php endwhile; ?>

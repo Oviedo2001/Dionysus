@@ -359,7 +359,17 @@ footer{
 }
 .first-txt {
     position: absolute;
-    top: 80%;
+    top: 82%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: normal;
+}
+
+
+.second-txt {
+    position: absolute;
+    top: 77%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
