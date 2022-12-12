@@ -9,9 +9,9 @@
             <div class="row">
 
                 <div class="col-lg-6 my-1" id="image">
-                    <?php if ($mot->image != null): ?>
+                    <?php if ($mot->image != null) : ?>
                         <center><img src="<?= base_url ?>uploads/images/motel/<?= $mot->image ?>"></center>
-                    <?php else: ?>
+                    <?php else : ?>
                         <center><img src="<?= base_url ?>assets/img/dummy.png"></center>
                     <?php endif; ?>
                 </div>
@@ -22,7 +22,7 @@
                         <br><br>
                         <i class="fa-solid fa-location-dot"></i> <?= $mot->direccion ?>
                         <br>
-                        <i class="fa-solid fa-phone"></i>  <?= $mot->telefono ?>
+                        <i class="fa-solid fa-phone"></i> <?= $mot->telefono ?>
                         <br>
                         <i class="fa-solid fa-envelope"></i> <?= $mot->email ?>
                     </p>
@@ -35,9 +35,9 @@
                         <?php while ($habi = $habitaciones->fetch_object()) : ?>
                             <div class="col mb-2">
                                 <div class="card">
-                                    <?php if ($habi->image != null): ?>
-                                        <center><img src="<?= base_url ?>uploads/images/habitaciones/<?= $habi->image ?>" ></center>
-                                    <?php else: ?>
+                                    <?php if ($habi->image != null) : ?>
+                                        <center><img src="<?= base_url ?>uploads/images/habitaciones/<?= $habi->image ?>"></center>
+                                    <?php else : ?>
                                         <center><img src="<?= base_url ?>assets/img/dummy.png"></center>
                                     <?php endif; ?>
                                     <div class="card-body">
@@ -45,11 +45,7 @@
                                     </div>
                                 </div>
                             </div>
-                        <?php endwhile; ?> 
-                    </div>
-
-                    <div class="d-grid gap-2 col-6 mx-auto">
-                        <button type="submit" class="btn btn-primary btn-lg">Ver más</button>
+                        <?php endwhile; ?>
                     </div>
                 </div>
 
@@ -67,7 +63,7 @@
         </div>
 
 
-    <?php else: ?>
+    <?php else : ?>
         <h1>El motel no existe</h1>
     <?php endif; ?>
-</div>
+    </div>

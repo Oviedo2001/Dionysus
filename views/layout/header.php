@@ -70,9 +70,9 @@
               </li>
             <?php endif; ?>
           </ul>
-          <form class="d-flex">
-            <input type="text" class="form-control me-2" placeholder="Buscar..." name="keyword" aria-label="Search" autocomplete="off">
-            <button class="btn btn-outline-info" type="submit" formaction="<?= base_url ?>inicio/search" name="submit-search">Search</button>
+          <form class="d-flex" >
+            <input type="text" class="form-control me-2" placeholder="Buscar..." name="busqueda" aria-label="Search" autocomplete="off">
+            <button class="btn btn-outline-info" type="submit" name="enviar" formaction="<?= base_url ?>inicio/search" formmethod="post">Search</button>
           </form>
         </div>
       </div>
