@@ -60,7 +60,7 @@
 
 				<div class="col-lg-12">
 					<h1 class="ftitle my-3">Comentarios</h1>
-
+					<p class="lead">No se encontraron comentarios.</p>
 
 				</div>
 			</div>
