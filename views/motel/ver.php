@@ -43,6 +43,7 @@
 										<?php endif; ?>
 										<div class="card-body">
 											<h5 class="card-title"><?= $habi->nombre ?></h5>
+											<a href="<?= base_url ?>habitacion/ver&id=<?= $habi->id ?>" class="btn btn-primary" style="width: -webkit-fill-available;">Ver</a>
 										</div>
 									</div>
 								</div>

@@ -59,8 +59,8 @@
                   Mi cuenta
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" aria-current="page" href="<?= base_url ?>">Perfil</a></li>
-                  <li><a class="dropdown-item" aria-current="page" href="<?= base_url ?>">Listas</a></li>
+                  <li><a class="dropdown-item" aria-current="page" href="<?= base_url ?>usuario/profile">Perfil</a></li>
+                  <li><a class="dropdown-item" aria-current="page" href="<?= base_url ?>usuario/profile">Listas</a></li>
                   <li><a class="dropdown-item" aria-current="page" href="<?= base_url ?>usuario/logout">Cerrar sesión</a></li>
                 </ul>
               </li>

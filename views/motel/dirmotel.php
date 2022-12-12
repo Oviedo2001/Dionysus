@@ -13,8 +13,8 @@
           <center><img src="<?= base_url ?>assets/img/dummy.png"></center>
         <?php endif; ?>
         <div class="card-body">
-          <h5 class="card-title"><?= $mote->nombre ?></h5>
-          <a href="<?= base_url ?>motel/ver&id=<?= $mote->id ?>" class="btn btn-primary btn-ver">Ver</a>
+          <h5 class="card-title" style="text-align: center;"><?= $mote->nombre ?></h5>
+          <a href="<?= base_url ?>motel/ver&id=<?= $mote->id ?>" class="btn btn-primary" style="width: -webkit-fill-available;">Ver</a>
         </div>
       </div>
 

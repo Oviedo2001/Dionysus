@@ -6,152 +6,160 @@ require_once 'models/motel.php';
 //QUE SE ENCUENTRAN REGISTRADAS EN EL SISTEMA
 require_once 'models/habitacion.php';
 
-class motelController {
+class motelController
+{
 
-    public function index() {
-        Utils::isAdmin();
-        $motel = new motel();
-        $moteles = $motel->getAll();
+	public function index()
+	{
+		Utils::isAdmin();
+		$motel = new motel();
+		$moteles = $motel->getAll();
 
-        require_once 'views/layout/header2.php';
-        require_once 'views/motel/index.php';
-    }
+		require_once 'views/layout/header2.php';
+		require_once 'views/motel/index.php';
+	}
 
-    public function dirMotel() {
-        $motel = new motel();
-        $moteles = $motel->getAll();
+	public function dirMotel()
+	{
+		$motel = new motel();
+		$moteles = $motel->getAll();
 
-        //var_dump($moteles->fetch_object());
-        require_once 'views/layout/header2.php';
-        require_once 'views/motel/dirmotel.php';
-    }
+		//var_dump($moteles->fetch_object());
+		require_once 'views/layout/header2.php';
+		require_once 'views/motel/dirmotel.php';
+	}
 
-    public function ver() {
-        if (isset($_GET['id'])) {
-            $id = $_GET['id'];
+	public function ver()
+	{
+		if (isset($_GET['id'])) {
+			$id = $_GET['id'];
 
-            $motel = new motel();
-            $motel->setId($id);
-            $mot = $motel->getOne();
-            
-            //SE INVOCA EL MODELO JUNTO CON LA FUNCION
-            //GETALL QUE NOS PERMITE IMPRIMIR LAS HABITACIONES DEL MOTEL
-            $habitacion = new habitacion();
-            $habitacion->setId($id);
-            $habitaciones = $habitacion->getAllHabitacion();
-        }
-        //var_dump($moteles->fetch_object());
-        require_once 'views/layout/header2.php';
-        require_once 'views/motel/ver.php';
-    }
+			$motel = new motel();
+			$motel->setId($id);
+			$mot = $motel->getOne();
 
-    public function crear() {
-        Utils::isAdmin();
-        require_once 'views/layout/header2.php';
-        require_once 'views/motel/crear.php';
-    }
+			//SE INVOCA EL MODELO JUNTO CON LA FUNCION
+			//GETALL QUE NOS PERMITE IMPRIMIR LAS HABITACIONES DEL MOTEL
+			$habitacion = new habitacion();
+			$habitacion->setId($id);
+			$habitaciones = $habitacion->getAllHabitacion();
+		}
+		//var_dump($moteles->fetch_object());
+		require_once 'views/layout/header2.php';
+		require_once 'views/motel/ver.php';
+	}
 
-    public function save() {
-        Utils::isAdmin();
 
-        if (isset($_POST)) {
-            $documento_rpta = isset($_POST['rpta']) ? $_POST['rpta'] : false;
-            $nit = isset($_POST['nit']) ? $_POST['nit'] : false;
-            $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : false;
-            $direccion = isset($_POST['direccion']) ? $_POST['direccion'] : false;
-            $descripcion = isset($_POST['descripcion']) ? $_POST['descripcion'] : false;
-            $telefono = isset($_POST['telefono']) ? $_POST['telefono'] : false;
-            $email = isset($_POST['email']) ? $_POST['email'] : false;
+	public function crear()
+	{
+		Utils::isAdmin();
+		require_once 'views/layout/header2.php';
+		require_once 'views/motel/crear.php';
+	}
 
-            if ($nit && $nombre && $direccion && $telefono && $email) {
+	public function save()
+	{
+		Utils::isAdmin();
 
-                $motel = new motel();
-                $motel->setDocumeto_rpta($documento_rpta);
-                $motel->setNit($nit);
-                $motel->setNombre($nombre);
-                $motel->setDireccion($direccion);
-                $motel->setDescripcion($descripcion);
-                $motel->setTelefono($telefono);
-                $motel->setEmail($email);
+		if (isset($_POST)) {
+			$documento_rpta = isset($_POST['rpta']) ? $_POST['rpta'] : false;
+			$nit = isset($_POST['nit']) ? $_POST['nit'] : false;
+			$nombre = isset($_POST['nombre']) ? $_POST['nombre'] : false;
+			$direccion = isset($_POST['direccion']) ? $_POST['direccion'] : false;
+			$descripcion = isset($_POST['descripcion']) ? $_POST['descripcion'] : false;
+			$telefono = isset($_POST['telefono']) ? $_POST['telefono'] : false;
+			$email = isset($_POST['email']) ? $_POST['email'] : false;
 
-                //GUARDAR LA IMAGEN
-                if (isset($_FILES['imagen'])) {
-                    $file = $_FILES['imagen'];
-                    $filename = $file['name'];
-                    $mimetype = $file['type'];
+			if ($nit && $nombre && $direccion && $telefono && $email) {
 
-                    if ($mimetype == "image/jpg" || $mimetype == "image/jpeg" || $mimetype == "image/png") {
+				$motel = new motel();
+				$motel->setDocumeto_rpta($documento_rpta);
+				$motel->setNit($nit);
+				$motel->setNombre($nombre);
+				$motel->setDireccion($direccion);
+				$motel->setDescripcion($descripcion);
+				$motel->setTelefono($telefono);
+				$motel->setEmail($email);
 
-                        if (!is_dir('uploads/images/motel')) {
-                            mkdir('uploads/images/motel/', 0777, true);
-                        }
+				//GUARDAR LA IMAGEN
+				if (isset($_FILES['imagen'])) {
+					$file = $_FILES['imagen'];
+					$filename = $file['name'];
+					$mimetype = $file['type'];
 
-                        move_uploaded_file($file['tmp_name'], 'uploads/images/motel/' . $filename);
-                        $motel->setImagen($filename);
-                    }
-                }
+					if ($mimetype == "image/jpg" || $mimetype == "image/jpeg" || $mimetype == "image/png") {
 
-                if (isset($_GET['id'])) {
-                    $id = $_GET['id'];
-                    $motel->setId($id);
+						if (!is_dir('uploads/images/motel')) {
+							mkdir('uploads/images/motel/', 0777, true);
+						}
 
-                    $save = $motel->edit();
-                } else {
-                    $save = $motel->save();
-                }
+						move_uploaded_file($file['tmp_name'], 'uploads/images/motel/' . $filename);
+						$motel->setImagen($filename);
+					}
+				}
 
-                if ($save) {
-                    $_SESSION['motel'] = "complete";
-                } else {
-                    $_SESSION['motel'] = "failed";
-                }
-            } else {
-                $_SESSION['motel'] = "failed";
-            }
-        } else {
-            $_SESSION['motel'] = "failed";
-        }
-        header("Location:" . base_url . "motel/index");
-    }
+				if (isset($_GET['id'])) {
+					$id = $_GET['id'];
+					$motel->setId($id);
 
-    public function editar() {
-        Utils::isAdmin();
-        if (isset($_GET['id'])) {
-            $id = $_GET['id'];
-            $edit = true;
+					$save = $motel->edit();
+				} else {
+					$save = $motel->save();
+				}
 
-            $motel = new motel();
-            $motel->setId($id);
+				if ($save) {
+					$_SESSION['motel'] = "complete";
+				} else {
+					$_SESSION['motel'] = "failed";
+				}
+			} else {
+				$_SESSION['motel'] = "failed";
+			}
+		} else {
+			$_SESSION['motel'] = "failed";
+		}
+		header("Location:" . base_url . "motel/index");
+	}
 
-            $mot = $motel->getOne();
-            require_once 'views/layout/header2.php';
-            require_once 'views/motel/crear.php';
-        } else {
-            header("Location:" . base_url . "motel/index");
-        }
-    }
+	public function editar()
+	{
+		Utils::isAdmin();
+		if (isset($_GET['id'])) {
+			$id = $_GET['id'];
+			$edit = true;
 
-    public function eliminar() {
-        Utils::isAdmin();
+			$motel = new motel();
+			$motel->setId($id);
 
-        if (isset($_GET['id'])) {
-            $id = $_GET['id'];
+			$mot = $motel->getOne();
+			require_once 'views/layout/header2.php';
+			require_once 'views/motel/crear.php';
+		} else {
+			header("Location:" . base_url . "motel/index");
+		}
+	}
 
-            $motel = new motel();
-            $motel->setId($id);
+	public function eliminar()
+	{
+		Utils::isAdmin();
 
-            $delete = $motel->delete();
+		if (isset($_GET['id'])) {
+			$id = $_GET['id'];
 
-            if ($delete) {
-                $_SESSION['delete'] = "complete";
-            } else {
-                $_SESSION['delete'] = "failed";
-            }
-        } else {
-            $_SESSION['delete'] = "failed";
-        }
+			$motel = new motel();
+			$motel->setId($id);
 
-        header("Location:" . base_url . "motel/index");
-    }
+			$delete = $motel->delete();
 
+			if ($delete) {
+				$_SESSION['delete'] = "complete";
+			} else {
+				$_SESSION['delete'] = "failed";
+			}
+		} else {
+			$_SESSION['delete'] = "failed";
+		}
+
+		header("Location:" . base_url . "motel/index");
+	}
 }
