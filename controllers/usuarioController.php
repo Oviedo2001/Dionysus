@@ -69,6 +69,24 @@ class usuarioController
     header("Location:" . base_url . 'usuario/registro');
   }
 
+  // public function editar()
+	// {
+	// 	Utils::isIdentity();
+	// 	if (isset($_GET['id'])) {
+	// 		$id = $_GET['id'];
+	// 		$edit = true;
+
+	// 		$usuario = new usuario();
+	// 		$usuario->setId($id);
+
+	// 		$mot = $usuario->getOne();
+	// 		require_once 'views/layout/header2.php';
+	// 		require_once 'views/usuario/perfil.php';
+	// 	} else {
+	// 		header("Location:" . base_url . "usuario/profile");
+	// 	}
+	// }
+
   public function login()
   {
     if (isset($_POST)) {
